@@ -8,6 +8,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" Width="401">
 
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
     <StackPanel Margin="0 20" >
         <TextBlock HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Margin="0 0 0 5">The Long Dark Save Editor</TextBlock>
         <TextBlock HorizontalAlignment="Center" FontSize="14" Margin="0 0 0 15">Community Fork v2.19</TextBlock>
@@ -56,4 +57,5 @@
 
 		</StackPanel>
 	</StackPanel>
+    </ScrollViewer>
 </UserControl>

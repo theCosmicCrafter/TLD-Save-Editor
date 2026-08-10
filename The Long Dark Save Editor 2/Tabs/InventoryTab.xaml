@@ -205,7 +205,9 @@
             </ListBox>
             </StackPanel>
             <Rectangle Fill="#A6B8C3" Grid.Column="1"></Rectangle>
-            <ContentControl Name="ccItem" Grid.Column="2" Content="{Binding ElementName=ItemList, Path=SelectedValue}" />
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <ContentControl Name="ccItem" Content="{Binding ElementName=ItemList, Path=SelectedValue}" />
+            </ScrollViewer>
         </Grid>
     </Grid>
 </UserControl>
