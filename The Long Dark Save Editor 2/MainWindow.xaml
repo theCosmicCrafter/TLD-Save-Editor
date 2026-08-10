@@ -13,7 +13,7 @@
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="{x:Static p:Resources.Title}" Height="600" Width="900"
+        Title="{x:Static p:Resources.Title}" MinHeight="500" MinWidth="800" Height="600" Width="900"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
