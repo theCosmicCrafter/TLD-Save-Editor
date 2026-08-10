@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows;
 using WForms = System.Windows.Forms;
 using System.Windows.Controls;
@@ -234,22 +235,29 @@ namespace The_Long_Dark_Save_Editor_2
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private async void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             var scope = FocusManager.GetFocusScope(tabPanel);
             FocusManager.SetFocusedElement(scope, null);
             Keyboard.ClearFocus();
 
+            dialogHost.DialogContent = new BusyDialogViewModel("Saving...");
+            dialogHost.IsOpen = true;
+
             try
             {
                 if (CurrentSave != null)
-                    CurrentSave.Save();
+                    await Task.Run(() => CurrentSave.Save());
                 if (CurrentProfile != null)
-                    CurrentProfile.Save();
+                    await Task.Run(() => CurrentProfile.Save());
             }
             catch (Exception ex)
             {
                 ErrorDialog.Show("Failed to save", ex != null ? (ex.Message + "\n" + ex.ToString()) : null);
+            }
+            finally
+            {
+                dialogHost.IsOpen = false;
             }
         }
 
@@ -265,17 +273,24 @@ namespace The_Long_Dark_Save_Editor_2
             }
         }
 
-        private void SetSave(string path)
+        private async void SetSave(string path)
         {
+            dialogHost.DialogContent = new BusyDialogViewModel("Loading save...");
+            dialogHost.IsOpen = true;
+
             try
             {
                 var save = new GameSave();
-                save.LoadSave(path);
+                await Task.Run(() => save.LoadSave(path));
                 CurrentSave = save;
             }
             catch (Exception ex)
             {
                 ErrorDialog.Show("Failed to load save", ex != null ? (ex.Message + "\n" + ex.ToString()) : null);
+            }
+            finally
+            {
+                dialogHost.IsOpen = false;
             }
         }
 
