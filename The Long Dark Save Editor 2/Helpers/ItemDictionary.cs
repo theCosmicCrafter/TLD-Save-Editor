@@ -136,6 +136,28 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
             AddItemInfo("GEAR_ImprovisedMittens", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
             AddItemInfo("GEAR_ImprovisedHat", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
             AddItemInfo("GEAR_Crampons", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_ImprovisedCrampons", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_ImprovisedDownInsulation", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_BallisticVest", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_ToolBelt", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_RifleScabbardA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_BasicGloves", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_TacticalGloves", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_MittenBlueStripe", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_MittenBrownPattern", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_MittenBurgundyPattern", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_HatLeatherAviatorA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_Balaclava", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_BaseballCap", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_CougarWrap", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_BasicWoolHat", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_MinersHelmet", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_WolfSkinHat", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_WolfSkinPant", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_SweaterChristmasA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_JacketLeatherFlightA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_JerseyHockeyA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_MinersJacket", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
 
             // Food
             AddItemInfo("GEAR_AirlineFoodChick", ItemCategory.Food, @"{""FoodItem"": {""m_CaloriesRemainingProxy"": 620}}");
@@ -198,16 +220,16 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
             AddItemInfo("GEAR_Arrow", ItemCategory.Tools, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
             AddItemInfo("GEAR_ArrowShaft", ItemCategory.Tools, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
             AddItemInfo("GEAR_BrokenArrow", ItemCategory.Tools, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
-            AddItemInfo("GEAR_BearSkinBedRoll", ItemCategory.Tools, @"{""Bed"": {}}");
-            AddItemInfo("GEAR_BedRoll", ItemCategory.Tools, @"{""Bed"": {}}");
-            AddItemInfo("GEAR_BlueFlare", ItemCategory.Tools, @"{""FlareItem"": {}}");
+            AddItemInfo("GEAR_BearSkinBedRoll", ItemCategory.Tools, @"{""Bed"": {""m_BedRollState"": {""Value"":""BedRoll""}}}");
+            AddItemInfo("GEAR_BedRoll", ItemCategory.Tools, @"{""Bed"": {""m_BedRollState"": {""Value"":""BedRoll""}}}");
+            AddItemInfo("GEAR_BlueFlare", ItemCategory.Tools, @"{""FlareItem"": {""m_StateProxy"": {""Value"":""FlareReady""}}}");
             AddItemInfo("GEAR_Bow", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_Brand", ItemCategory.Tools, @"{""TorchItem"": {}}"); //Check!!
             AddItemInfo("GEAR_Bullet", ItemCategory.Tools, @"{""StackableItem"": {""m_UnitsProxy"": 6}}");
             AddItemInfo("GEAR_CarBattery", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_CanOpener", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_Firestriker", ItemCategory.Tools, @"{}");
-            AddItemInfo("GEAR_FlareA", ItemCategory.Tools, @"{""FlareItem"": {}}");
+            AddItemInfo("GEAR_FlareA", ItemCategory.Tools, @"{""FlareItem"": {""m_StateProxy"": {""Value"":""FlareReady""}}}");
             AddItemInfo("GEAR_FlareGunAmmoSingle", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_FlareGun", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_GunpowderCan", ItemCategory.Tools, @"{}");
@@ -492,6 +514,17 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
             AddItemInfo("GEAR_PostCard_TM_AndresPeak", ItemCategory.Collectible, @"{}");
             AddItemInfo("GEAR_PostCard_TM_TailSection", ItemCategory.Collectible, @"{}");
             AddItemInfo("GEAR_TechnicalBackpack", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_BookBigOne", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_BookGhostStag", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_BookPlantsGuide", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_BookSasquatch", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_FlyerBingo", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_GoldCross", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_IDcard", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_Necklace", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_RosaryA", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_SatchelExplosive", ItemCategory.Collectible, @"{}");
+            AddItemInfo("GEAR_ScribbledMap", ItemCategory.Collectible, @"{}");
 
 
             // Hidden
