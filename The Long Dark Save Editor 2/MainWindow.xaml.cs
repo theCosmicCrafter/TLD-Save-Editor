@@ -9,12 +9,14 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Media;
 using WForms = System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Input;
 using The_Long_Dark_Save_Editor_2.Helpers;
 using The_Long_Dark_Save_Editor_2.ViewModels;
 using The_Long_Dark_Save_Editor_2.Serialization;
+using MaterialDesignThemes.Wpf;
 
 namespace The_Long_Dark_Save_Editor_2
 {
@@ -88,6 +90,8 @@ namespace The_Long_Dark_Save_Editor_2
             TestBranch = Properties.Settings.Default.TestBranch;
             Title += " " + Version.ToString();
 
+            ThemeToggle.IsChecked = Properties.Settings.Default.DarkMode;
+            ApplyTheme(Properties.Settings.Default.DarkMode);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -326,6 +330,34 @@ namespace The_Long_Dark_Save_Editor_2
                 dialogHost.IsOpen = true;
                 this.currentSaveChanged = false;
             }
+        }
+
+        private void ThemeToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.DarkMode = true;
+            ApplyTheme(true);
+        }
+
+        private void ThemeToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.DarkMode = false;
+            ApplyTheme(false);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            var palette = new PaletteHelper();
+            var theme = palette.GetTheme();
+            theme.SetBaseTheme(isDark ? Theme.Dark : Theme.Light);
+            palette.SetTheme(theme);
+
+            var paper = new SolidColorBrush(isDark ? Color.FromRgb(0x30, 0x30, 0x30) : Colors.White);
+            var body = new SolidColorBrush(isDark ? Color.FromRgb(0xF0, 0xF0, 0xF0) : Color.FromRgb(0x30, 0x30, 0x30));
+
+            if (Application.Current.Resources.Contains("MaterialDesignPaper"))
+                Application.Current.Resources["MaterialDesignPaper"] = paper;
+            if (Application.Current.Resources.Contains("MaterialDesignBody"))
+                Application.Current.Resources["MaterialDesignBody"] = body;
         }
     }
 

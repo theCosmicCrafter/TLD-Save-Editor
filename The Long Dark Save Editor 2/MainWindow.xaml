@@ -94,6 +94,7 @@
                             <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">View on GitHub</TextBlock>
                         </StackPanel>
                     </Button>
+                    <ToggleButton Margin="10 0 0 0" Name="ThemeToggle" Checked="ThemeToggle_Checked" Unchecked="ThemeToggle_Unchecked" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="Dark mode"/>
                 </StackPanel>
             </Grid>
             <Rectangle DockPanel.Dock="Top" Fill="#A6B8C3" Height="1" ></Rectangle>
