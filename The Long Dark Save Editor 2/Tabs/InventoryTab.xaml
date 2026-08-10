@@ -144,7 +144,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <ListBox Name="ItemList" Grid.Column="0" ItemsSource="{Binding Source={StaticResource InventoryItems}}">
+            <StackPanel Grid.Column="0">
+                <TextBox Name="txtSearch" materialDesign:HintAssist.Hint="Search items..." Margin="5 5 5 0" TextChanged="txtSearch_TextChanged"/>
+                <ListBox Name="ItemList" ItemsSource="{Binding Source={StaticResource InventoryItems}}">
                 <ListBox.GroupStyle>
                     <GroupStyle>
                         <GroupStyle.ContainerStyle>
@@ -168,6 +170,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            </StackPanel>
             <Rectangle Fill="#A6B8C3" Grid.Column="1"></Rectangle>
             <ContentControl Name="ccItem" Grid.Column="2" Content="{Binding ElementName=ItemList, Path=SelectedValue}" />
         </Grid>

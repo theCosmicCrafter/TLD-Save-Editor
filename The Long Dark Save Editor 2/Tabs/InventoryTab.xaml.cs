@@ -1,7 +1,10 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
 
@@ -79,6 +82,29 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         private void PrintJsonClicked(object sender, RoutedEventArgs e)
         {
             // TODO!!
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var view = CollectionViewSource.GetDefaultView(ItemList.ItemsSource);
+            if (view == null)
+                return;
+
+            var filter = txtSearch.Text.Trim();
+            if (string.IsNullOrEmpty(filter))
+            {
+                view.Filter = null;
+                return;
+            }
+
+            view.Filter = obj =>
+            {
+                var item = obj as InventoryItemSaveData;
+                if (item == null)
+                    return false;
+                return (item.InGameName?.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0)
+                    || (item.m_PrefabName?.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0);
+            };
         }
     }
 }
