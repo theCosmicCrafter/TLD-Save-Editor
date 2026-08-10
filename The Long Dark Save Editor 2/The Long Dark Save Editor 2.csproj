@@ -120,7 +120,8 @@
     <Compile Include="Converters\EnumDescriptionConverter.cs" />
     <Compile Include="Converters\InjuriesToOpacityConverter.cs" />
     <Compile Include="Converters\ObjectNotNullConverter.cs" />
-    <Compile Include="Converters\RegionMapExistsConverter.cs" />
+    <Compile Include="Converters\SkillLevelConverter.cs" />
+    <Compile Include="Converters\SkillProgressConverter.cs" />
     <Compile Include="ErrorDialog.xaml.cs">
       <DependentUpon>ErrorDialog.xaml</DependentUpon>
     </Compile>
