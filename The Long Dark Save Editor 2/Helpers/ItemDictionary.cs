@@ -19,7 +19,7 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
 
         private static void AddItemInfo(string itemID, ItemCategory category, string defaultSerialized, bool hide = false, bool preventDelete = false)
         {
-            itemInfo.Add(itemID, new ItemInfo { category = category, defaultSerialized = defaultSerialized, hide = hide, preventDelete = preventDelete });
+            itemInfo[itemID] = new ItemInfo { category = category, defaultSerialized = defaultSerialized, hide = hide, preventDelete = preventDelete };
         }
 
         public static string GetInGameName(string name)
