@@ -57,13 +57,17 @@ namespace The_Long_Dark_Save_Editor_2.Serialization
                 else if (t == typeof(uint))
                     return token.Value<uint>();
                 else if (t == typeof(long))
+                {
+                    if (token.Type == JTokenType.Float)
+                        return Convert.ToInt64(token.Value<double>());
                     return token.Value<long>();
+                }
                 else if (t == typeof(ulong))
                     return token.Value<ulong>();
                 else if (t == typeof(float))
                     return token.Value<float>();
-                else if (t == typeof(long))
-                    return token.Value<long>();
+                else if (t == typeof(double))
+                    return token.Value<double>();
                 else if (t == typeof(decimal))
                     return token.Value<decimal>();
                 else

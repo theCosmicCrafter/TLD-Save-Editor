@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using The_Long_Dark_Save_Editor_2.Game_data;
 
 namespace The_Long_Dark_Save_Editor_2.Helpers
@@ -38,7 +38,7 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
         {
             // First aid
             AddItemInfo("GEAR_BottleAntibiotics", ItemCategory.FirstAid, @"{""StackableItem"": {""m_UnitsProxy"": 6}}");
-            AddItemInfo("GEAR_BottleHydrogenPeroxide", ItemCategory.FirstAid, @"{""LiquidItem"": {""m_LiquidLitersProxy"": 0.5,""m_LiquidQuality"": { ""Value"":""NonPotable""}}}");
+            AddItemInfo("GEAR_BottleHydrogenPeroxide", ItemCategory.FirstAid, @"{""LiquidItem"": {""m_LiquidLitersProxy"": 500000000,""m_LiquidQuality"": { ""Value"":""NonPotable""}}}");
             AddItemInfo("GEAR_BottlePainKillers", ItemCategory.FirstAid, @"{""StackableItem"": {""m_UnitsProxy"": 6}}");
             AddItemInfo("GEAR_HeavyBandage", ItemCategory.FirstAid, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
             AddItemInfo("GEAR_OldMansBeardDressing", ItemCategory.FirstAid, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
@@ -181,8 +181,8 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
             AddItemInfo("GEAR_SodaGrape", ItemCategory.Food, @"{""FoodItem"": {""m_CaloriesRemainingProxy"": 250}}");
             AddItemInfo("GEAR_SodaOrange", ItemCategory.Food, @"{""FoodItem"": {""m_CaloriesRemainingProxy"": 250}}");
             AddItemInfo("GEAR_TomatoSoupCan", ItemCategory.Food, @"{""FoodItem"": {""m_CaloriesRemainingProxy"": 300}, ""SmashableItem"": {}}");
-            AddItemInfo("GEAR_WaterSupplyNotPotable", ItemCategory.Food, @"{""WaterSupply"":{""m_VolumeProxy"": 1}}", true);
-            AddItemInfo("GEAR_WaterSupplyPotable", ItemCategory.Food, @"{""WaterSupply"":{""m_VolumeProxy"": 1}}", true);
+            AddItemInfo("GEAR_WaterSupplyNotPotable", ItemCategory.Food, @"{""WaterSupply"":{""m_VolumeProxy"": 1000000000}}", true);
+            AddItemInfo("GEAR_WaterSupplyPotable", ItemCategory.Food, @"{""WaterSupply"":{""m_VolumeProxy"": 1000000000}}", true);
             AddItemInfo("GEAR_WolfQuarter", ItemCategory.Food, @"{""BodyHarvest"": {m_QuarterBagWasteMultiplier:2, m_MeatAvailableKG: 1, m_Condition: 100, m_DamageSide:{Value:""DamageSideRight""}}}");
             AddItemInfo("GEAR_BearQuarter", ItemCategory.Food, @"{""BodyHarvest"": {m_QuarterBagWasteMultiplier:2, m_MeatAvailableKG: 1, m_Condition: 100, m_DamageSide:{Value:""DamageSideRight""}}}");
             AddItemInfo("GEAR_StagQuarter", ItemCategory.Food, @"{""BodyHarvest"": {m_QuarterBagWasteMultiplier:2, m_MeatAvailableKG: 1, m_Condition: 100, m_DamageSide:{Value:""DamageSideRight""}}}");
@@ -218,12 +218,12 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
             AddItemInfo("GEAR_HighQualityTools", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_Hook", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_HookAndLine", ItemCategory.Tools, @"{}");
-            AddItemInfo("GEAR_JerrycanRusty", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 2,m_LiquidQuality:{Value:""NonPotable""}}}");
-            AddItemInfo("GEAR_KeroseneLampB", ItemCategory.Tools, @"{""KeroseneLampItem"": {""m_CurrentFuelLitersProxy"": 1}}");
+            AddItemInfo("GEAR_JerrycanRusty", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 2000000000,m_LiquidQuality:{Value:""NonPotable""}}}");
+            AddItemInfo("GEAR_KeroseneLampB", ItemCategory.Tools, @"{""KeroseneLampItem"": {""m_CurrentFuelLitersProxy"": 1000000000}}");
             AddItemInfo("GEAR_Knife", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_KnifeImprovised", ItemCategory.Tools, @"{}");
-            AddItemInfo("GEAR_LampFuel", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 0.5,m_LiquidQuality:{Value:""NonPotable""}}}");
-            AddItemInfo("GEAR_LampFuelFull", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 0.5,m_LiquidQuality:{Value:""NonPotable""}}}");
+            AddItemInfo("GEAR_LampFuel", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 500000000,m_LiquidQuality:{Value:""NonPotable""}}}");
+            AddItemInfo("GEAR_LampFuelFull", ItemCategory.Tools, @"{""LiquidItem"": {m_LiquidLitersProxy: 500000000,m_LiquidQuality:{Value:""NonPotable""}}}");
             AddItemInfo("GEAR_Line", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_MagnifyingLens", ItemCategory.Tools, @"{}");
             AddItemInfo("GEAR_NewsprintRoll", ItemCategory.Tools, @"{}");

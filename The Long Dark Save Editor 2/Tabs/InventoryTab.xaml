@@ -11,9 +11,9 @@
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="500">
     <UserControl.Resources>
         <converters:PrefabNameConverter x:Key="PrefabNameConverter" />
@@ -42,7 +42,7 @@
                 <StackPanel Margin="10 10 0 0">
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                         <Label Width="130" Content="{x:Static p:Resources.Condition}" />
-                        <Slider Name="healthSlider" TickFrequency="0.01" Orientation="Horizontal" Minimum="0" IsSnapToTickEnabled="True" 
+                        <Slider Name="healthSlider" TickFrequency="0.01" Orientation="Horizontal" Minimum="0" IsSnapToTickEnabled="True"
                             Maximum="1" Width="200" Value="{Binding Gear.NormalizedCondition}" Margin="5 5">
                         </Slider>
                         <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter = {StaticResource DoubleToPercentageConverter}}"></Label>
@@ -60,13 +60,13 @@
                     <StackPanel Visibility="{Binding Gear.LiquidItem, Converter={StaticResource ObjectToVisibilityConverter}}">
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                             <Label Width="130" Content="{x:Static p:Resources.AmountLiter}" />
-                            <TextBox Width="200" Text="{Binding Gear.LiquidItem.m_LiquidLitersProxy}"></TextBox>
+                            <TextBox Width="200" Text="{Binding Gear.LiquidItem.LiquidLitersDisplay}"></TextBox>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Visibility="{Binding Gear.KeroseneLampItem, Converter={StaticResource ObjectToVisibilityConverter}}">
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                             <Label Width="130" Content="{x:Static p:Resources.AmountLiter}" />
-                            <TextBox Width="200" Text="{Binding Gear.KeroseneLampItem.m_CurrentFuelLitersProxy}"></TextBox>
+                            <TextBox Width="200" Text="{Binding Gear.KeroseneLampItem.CurrentFuelLitersDisplay}"></TextBox>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Visibility="{Binding Gear.WeaponItem, Converter={StaticResource ObjectToVisibilityConverter}}">
@@ -78,13 +78,13 @@
                     <StackPanel Visibility="{Binding Gear.WaterSupply, Converter={StaticResource ObjectToVisibilityConverter}}">
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                             <Label Width="130" Content="{x:Static p:Resources.AmountLiter}" />
-                            <TextBox Width="200" Text="{Binding Gear.WaterSupply.m_VolumeProxy}"></TextBox>
+                            <TextBox Width="200" Text="{Binding Gear.WaterSupply.VolumeDisplay}"></TextBox>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Visibility="{Binding Gear.InProgressItem, Converter={StaticResource ObjectToVisibilityConverter}}">
                         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                             <Label Width="130" Content="{x:Static p:Resources.Progress}" />
-                            <Slider Name="progressSlider" TickFrequency="0.01" Orientation="Horizontal" Minimum="0" IsSnapToTickEnabled="True" 
+                            <Slider Name="progressSlider" TickFrequency="0.01" Orientation="Horizontal" Minimum="0" IsSnapToTickEnabled="True"
                             Maximum="1" Width="200" Value="{Binding Gear.InProgressItem.m_PercentComplete}" Margin="5 5">
                             </Slider>
                             <Label Content="{Binding ElementName=progressSlider, Path=Value, Converter = {StaticResource DoubleToPercentageConverter}}"></Label>
@@ -127,9 +127,9 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <StackPanel Orientation="Horizontal" Margin="5 0">
-                <ComboBox Name="cbItemCategory" ItemsSource="{Binding Source={helpers:EnumerationExtension {x:Type gameData:ItemCategory}}}" 
+                <ComboBox Name="cbItemCategory" ItemsSource="{Binding Source={helpers:EnumerationExtension {x:Type gameData:ItemCategory}}}"
                                         DisplayMemberPath="Description" SelectedValuePath="Value" Width="120" SelectedIndex="0"/>
-                <ComboBox Name="cbItem" ItemsSource="{Binding ElementName=cbItemCategory, Path=SelectedValue, Converter={StaticResource CategoryToItemsConverter}}" 
+                <ComboBox Name="cbItem" ItemsSource="{Binding ElementName=cbItemCategory, Path=SelectedValue, Converter={StaticResource CategoryToItemsConverter}}"
                           Margin="10 0 5 0" DisplayMemberPath="Description" SelectedValuePath="Value" Width="160" SelectionChanged="cbItem_SelectionChanged" SelectedIndex="0" IsEditable="True"/>
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="AddItemClicked" Content="{x:Static p:Resources.AddItem}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RepairAllClicked" Content="{x:Static p:Resources.RepairAll}" />

@@ -351,8 +351,15 @@ namespace The_Long_Dark_Save_Editor_2.Game_data
 
     public class LiquidItemSaveDataProxy
     {
-        public float m_LiquidLitersProxy { get; set; }
+        public long m_LiquidLitersProxy { get; set; }
         public EnumWrapper<LiquidQuality> m_LiquidQuality { get; set; }
+
+        [JsonIgnore]
+        public double LiquidLitersDisplay
+        {
+            get { return m_LiquidLitersProxy / 1000000000.0; }
+            set { m_LiquidLitersProxy = (long)Math.Round(value * 1000000000); }
+        }
     }
 
     public class FlareItemSaveDataProxy
@@ -372,8 +379,15 @@ namespace The_Long_Dark_Save_Editor_2.Game_data
     public class KeroseneLampItemSaveDataProxy
     {
         public float m_HoursPlayed { get; set; }
-        public float m_CurrentFuelLitersProxy { get; set; }
+        public long m_CurrentFuelLitersProxy { get; set; }
         public bool m_OnProxy { get; set; }
+
+        [JsonIgnore]
+        public double CurrentFuelLitersDisplay
+        {
+            get { return m_CurrentFuelLitersProxy / 1000000000.0; }
+            set { m_CurrentFuelLitersProxy = (long)Math.Round(value * 1000000000); }
+        }
     }
 
     public class ClothingItemSaveDataProxy
@@ -396,7 +410,14 @@ namespace The_Long_Dark_Save_Editor_2.Game_data
 
     public class WaterSupplySaveDataProxy
     {
-        public float m_VolumeProxy { get; set; }
+        public long m_VolumeProxy { get; set; }
+
+        [JsonIgnore]
+        public double VolumeDisplay
+        {
+            get { return m_VolumeProxy / 1000000000.0; }
+            set { m_VolumeProxy = (long)Math.Round(value * 1000000000); }
+        }
     }
 
     public class BedSaveDataProxy

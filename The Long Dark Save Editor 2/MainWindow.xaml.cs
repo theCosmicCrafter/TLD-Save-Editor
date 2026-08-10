@@ -66,6 +66,7 @@ namespace The_Long_Dark_Save_Editor_2
             {
                 //MissingMemberHandling = MissingMemberHandling.Error,
                 FloatFormatHandling = FloatFormatHandling.Symbol,
+                Culture = System.Globalization.CultureInfo.InvariantCulture,
                 // Serialize byte arrays as arrays of numbers instead of base64
                 Converters = new List<JsonConverter> { new ByteArrayConverter() },
             };
@@ -93,7 +94,7 @@ namespace The_Long_Dark_Save_Editor_2
         {
             Debug.WriteLine("Window loaded");
 #if !DEBUG
-            
+
             CheckForUpdates();
             LogOpen();
 
@@ -239,10 +240,17 @@ namespace The_Long_Dark_Save_Editor_2
             FocusManager.SetFocusedElement(scope, null);
             Keyboard.ClearFocus();
 
-            if (CurrentSave != null)
-                CurrentSave.Save();
-            if (CurrentProfile != null)
-                CurrentProfile.Save();
+            try
+            {
+                if (CurrentSave != null)
+                    CurrentSave.Save();
+                if (CurrentProfile != null)
+                    CurrentProfile.Save();
+            }
+            catch (Exception ex)
+            {
+                ErrorDialog.Show("Failed to save", ex != null ? (ex.Message + "\n" + ex.ToString()) : null);
+            }
         }
 
         public void CurrentSaveSelectionChanged(object sender, SelectionChangedEventArgs e)
