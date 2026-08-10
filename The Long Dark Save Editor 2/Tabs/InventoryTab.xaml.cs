@@ -100,20 +100,28 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
 
         private void RemoveAllClicked(object sender, RoutedEventArgs e)
         {
+            if (mainWindow?.CurrentSave?.Global?.Inventory?.Items == null)
+                return;
             mainWindow.CurrentSave.Global.Inventory.Items.Clear();
         }
 
         private void RepairAllClicked(object sender, RoutedEventArgs e)
         {
+            if (mainWindow?.CurrentSave?.Global?.Inventory?.Items == null)
+                return;
+
             foreach (var item in mainWindow.CurrentSave.Global.Inventory.Items)
             {
                 var gear = item.Gear;
+                if (gear == null)
+                    continue;
+
                 gear.NormalizedCondition = 1;
                 gear.m_WornOut = false;
 
-                if (gear.FlareItem != null)
+                if (gear.FlareItem?.m_StateProxy != null)
                     gear.FlareItem.m_StateProxy.SetValue(FlareState.Fresh);
-                if (gear.TorchItem != null)
+                if (gear.TorchItem?.m_StateProxy != null)
                     gear.TorchItem.m_StateProxy.SetValue(TorchState.Fresh);
             }
         }
