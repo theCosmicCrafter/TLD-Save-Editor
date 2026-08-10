@@ -43,6 +43,11 @@
                       ItemsSource="{Binding CurrentSave.Boot.m_SceneName, Converter={StaticResource EnumWrapperConverter}}"
                       SelectedValue="{Binding CurrentSave.Boot.m_SceneName.Value}"/>
         </StackPanel>
+        <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
+            <Label Width="130" Content="Teleport to..."/>
+            <ComboBox Name="cbTeleport" Margin="10 0 0 0" Width="250" DisplayMemberPath="Name"
+                      SelectedIndex="0" SelectionChanged="cbTeleport_SelectionChanged"/>
+        </StackPanel>
         <StackPanel Margin="0 0 0 10">
             <StackPanel Margin="0 0 0 0" Orientation="Horizontal">
                 <Label Width="100" Content="{x:Static p:Resources.Position}" HorizontalAlignment="Left"/>

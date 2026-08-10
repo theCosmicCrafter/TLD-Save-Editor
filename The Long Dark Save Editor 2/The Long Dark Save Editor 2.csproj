@@ -172,6 +172,7 @@
     </Compile>
     <Compile Include="Profile.cs" />
     <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Helpers\TeleportPresets.cs" />
     <Compile Include="Properties\Resources.ru-RU.Designer.cs">
       <DependentUpon>Resources.ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
