@@ -298,8 +298,22 @@ namespace The_Long_Dark_Save_Editor_2
 
         private void OpenBackupsClicked(object sender, RoutedEventArgs e)
         {
-            var path = Path.Combine(Util.GetLocalPath(), testBranch ? "HinterlandTest2" : "Hinterland", "TheLongDark", "Survival", "backups");
-            Process.Start(path);
+            var savePath = CurrentSave?.path;
+            if (savePath == null)
+                return;
+
+            var backupDir = Path.Combine(Path.GetDirectoryName(savePath), "backups");
+
+            var window = new Window
+            {
+                Title = "Backup Manager",
+                Content = new Views.BackupManagerView(backupDir),
+                Width = 520,
+                Height = 450,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this
+            };
+            window.ShowDialog();
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
