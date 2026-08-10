@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
 
@@ -79,6 +81,29 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         private void PrintJsonClicked(object sender, RoutedEventArgs e)
         {
             // TODO!!
+        }
+
+        private void cbSortBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var view = CollectionViewSource.GetDefaultView(ItemList.ItemsSource);
+            if (view == null || view.SortDescriptions == null)
+                return;
+
+            view.SortDescriptions.Clear();
+            int idx = cbSortBy.SelectedIndex;
+            if (idx == 0)
+            {
+                view.SortDescriptions.Add(new SortDescription("Category", ListSortDirection.Ascending));
+                view.SortDescriptions.Add(new SortDescription("InGameName", ListSortDirection.Ascending));
+            }
+            else if (idx == 1)
+            {
+                view.SortDescriptions.Add(new SortDescription("InGameName", ListSortDirection.Ascending));
+            }
+            else if (idx == 2)
+            {
+                view.SortDescriptions.Add(new SortDescription("Gear.NormalizedCondition", ListSortDirection.Descending));
+            }
         }
     }
 }
