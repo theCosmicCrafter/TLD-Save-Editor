@@ -8,15 +8,16 @@
              xmlns:System="clr-namespace:System;assembly=mscorlib"
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="500">
     <UserControl.Resources>
         <converters:PercentageConverter x:Key="PercentageConverter" />
         <converters:AvailableRegionConverter x:Key="AvailableRegionConverter" />
         <converters:RegionMapExistsConverter x:Key="RegionMapExistsConverter" />
         <converters:EnumWrapperConverter x:Key="EnumWrapperConverter" />
+        <converters:FeatEnabledConverter x:Key="FeatEnabledConverter" />
         <System:Double x:Key="double100">100</System:Double>
     </UserControl.Resources>
 
@@ -24,7 +25,7 @@
         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
             <Label Width="130" Content="{x:Static p:Resources.ExperienceMode}"/>
             <ComboBox Margin="10 0 0 0" Width="160" SelectedIndex="0" SelectedValuePath="Value" DisplayMemberPath="Description"
-                      ItemsSource="{Binding CurrentSave.Global.ExperienceModeManager.m_CurrentModeType, Converter={StaticResource EnumWrapperConverter}}" 
+                      ItemsSource="{Binding CurrentSave.Global.ExperienceModeManager.m_CurrentModeType, Converter={StaticResource EnumWrapperConverter}}"
                       SelectedValue="{Binding CurrentSave.Global.ExperienceModeManager.m_CurrentModeType.Value}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0 0 0 5" Style="{StaticResource HideIfNotCustomDifficulty}">
@@ -57,7 +58,7 @@
             <Slider Name="healthSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
                     Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Condition.m_CurrentHPProxy}" Margin="5 5">
             </Slider>
-            <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter={StaticResource PercentageConverter}, 
+            <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter={StaticResource PercentageConverter},
                    ConverterParameter={StaticResource double100}}">
             </Label>
         </StackPanel>
@@ -74,7 +75,7 @@
             <Slider Name="thirstSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
                                         Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Thirst.m_CurrentThirstProxy}" Margin="5 5">
             </Slider>
-            <Label Content="{Binding ElementName=thirstSlider, Path=Value, Converter={StaticResource PercentageConverter}, 
+            <Label Content="{Binding ElementName=thirstSlider, Path=Value, Converter={StaticResource PercentageConverter},
                    ConverterParameter={StaticResource double100}}">
             </Label>
         </StackPanel>
@@ -83,7 +84,7 @@
             <Slider Name="fatigueSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
                     Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Fatigue.m_CurrentFatigueProxy}" Margin="5 5">
             </Slider>
-            <Label Content="{Binding ElementName=fatigueSlider, Path=Value, Converter={StaticResource PercentageConverter}, 
+            <Label Content="{Binding ElementName=fatigueSlider, Path=Value, Converter={StaticResource PercentageConverter},
                    ConverterParameter={StaticResource double100}}">
             </Label>
         </StackPanel>
@@ -92,9 +93,24 @@
             <Slider Name="freezingSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
                     Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Freezing.m_CurrentFreezingProxy}" Margin="5 5">
             </Slider>
-            <Label Content="{Binding ElementName=freezingSlider, Path=Value, Converter={StaticResource PercentageConverter}, 
+            <Label Content="{Binding ElementName=freezingSlider, Path=Value, Converter={StaticResource PercentageConverter},
                    ConverterParameter={StaticResource double100}}">
             </Label>
         </StackPanel>
+
+        <GroupBox Header="Feats" Margin="0 10 0 0">
+            <WrapPanel>
+                <CheckBox Content="Book Smarts" Tag="BookSmarts" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=BookSmarts, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Cold Fusion" Tag="ColdFusion" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=ColdFusion, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Efficient Machine" Tag="EfficientMachine" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=EfficientMachine, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Fire Master" Tag="FireMaster" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=FireMaster, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Free Runner" Tag="FreeRunner" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=FreeRunner, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Snow Walker" Tag="SnowWalker" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=SnowWalker, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Expert Trapper" Tag="ExpertTrapper" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=ExpertTrapper, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Straight To Heart" Tag="StraightToHeart" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=StraightToHeart, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Blizzard Walker" Tag="BlizzardWalker" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=BlizzardWalker, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+                <CheckBox Content="Night Walker" Tag="NightWalker" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=NightWalker, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
+            </WrapPanel>
+        </GroupBox>
     </StackPanel>
 </UserControl>
