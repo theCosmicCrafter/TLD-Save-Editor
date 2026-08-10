@@ -99,7 +99,7 @@
                 </StackPanel>
             </Grid>
             <Rectangle DockPanel.Dock="Top" Fill="#A6B8C3" Height="1" ></Rectangle>
-                <dragablz:TabablzControl Name="tabPanel"  DockPanel.Dock="Bottom" FixedHeaderCount="7">
+                <dragablz:TabablzControl Name="tabPanel"  DockPanel.Dock="Bottom" FixedHeaderCount="8">
                     <TabItem Header="{x:Static p:Resources.Profile}">
                         <StackPanel IsEnabled="{Binding CurrentProfile, Converter={StaticResource ObjectNotNullConverter}}" >
                             <Rectangle Fill="#A6B8C3" Height="1" />
@@ -141,6 +141,12 @@
                             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
                             <tabs:AboutTab />
                         </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Advanced">
+                        <DockPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                            <Rectangle Fill="#A6B8C3" Height="1" DockPanel.Dock="Top"></Rectangle>
+                            <tabs:RawJsonTab />
+                        </DockPanel>
                     </TabItem>
                 </dragablz:TabablzControl>
             </DockPanel>
