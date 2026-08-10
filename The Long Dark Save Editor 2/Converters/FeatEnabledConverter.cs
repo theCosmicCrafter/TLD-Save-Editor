@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Data;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
+using The_Long_Dark_Save_Editor_2.Serialization;
 
 namespace The_Long_Dark_Save_Editor_2.Converters
 {
@@ -20,7 +21,7 @@ namespace The_Long_Dark_Save_Editor_2.Converters
             if (!Enum.TryParse(parameter.ToString(), out feat))
                 return false;
 
-            return list.Any(x => x.Value == feat);
+            return list.Any(x => x.Value == feat.ToString());
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

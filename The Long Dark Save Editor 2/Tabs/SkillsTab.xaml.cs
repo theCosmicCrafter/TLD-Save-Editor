@@ -60,7 +60,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
 
         private void RefreshSkills()
         {
-            MainWindow.Instance?.PropertyChanged?.Invoke(MainWindow.Instance, new PropertyChangedEventArgs("CurrentSave"));
+            MainWindow.Instance?.OnPropertyChanged("CurrentSave");
         }
     }
 }

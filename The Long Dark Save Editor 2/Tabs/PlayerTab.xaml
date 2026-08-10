@@ -63,7 +63,6 @@
                 <TextBox Width="250" Text="{Binding CurrentSave.Global.PlayerManager.m_SaveGamePosition[1]}"/>
             </StackPanel>
         </StackPanel>
-<<<<<<< HEAD
         <GroupBox Header="Vitals" Margin="0 0 0 10" Padding="8">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 5">

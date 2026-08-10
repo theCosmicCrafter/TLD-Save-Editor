@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
+using The_Long_Dark_Save_Editor_2.Serialization;
 
 namespace The_Long_Dark_Save_Editor_2.Tabs
 {
@@ -39,7 +40,6 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             cbTeleport.SelectedIndex = 0;
         }
 
-<<<<<<< HEAD
         private void FeatCheckBox_Click(object sender, RoutedEventArgs e)
         {
             var checkBox = sender as CheckBox;
@@ -61,12 +61,12 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
                 return;
 
             var list = save.Global.FeatsEnabled.m_FeatsEnabledThisSandbox;
-            var existing = list.FirstOrDefault(x => x.Value == feat);
+            var existing = list.FirstOrDefault(x => x.Value == feat.ToString());
 
             if (checkBox.IsChecked == true)
             {
                 if (existing == null)
-                    list.Add(new EnumWrapper<FeatType>(feat));
+                    list.Add(new EnumWrapper<FeatType>(feat.ToString()));
             }
             else
             {
@@ -89,7 +89,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             save.Global.Freezing.m_CurrentFreezingProxy = 100f;
             save.Global.Hunger.m_CurrentReserveCaloriesProxy = 2500f;
 
-            MainWindow.Instance.PropertyChanged?.Invoke(MainWindow.Instance, new PropertyChangedEventArgs("CurrentSave"));
+            MainWindow.Instance.OnPropertyChanged("CurrentSave");
         }
 
         private void CopyPositionClicked(object sender, RoutedEventArgs e)
@@ -133,7 +133,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             save.Boot.m_SceneName.Value = preset.Region;
 
             var pos = save.Global.PlayerManager.m_SaveGamePosition;
-            if (pos != null && pos.Length >= 3)
+            if (pos != null && pos.Count >= 3)
             {
                 pos[0] = preset.X;
                 pos[1] = preset.Z;

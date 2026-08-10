@@ -3,4 +3,7 @@
 *.suo
 *.user
 The Long Dark Save Editor 2/bin/
-The Long Dark Save Editor 2/obj/
+The Long Dark Save Editor 2/obj/ndp48-devpack.exe
+ndp48-runtime.exe
+nuget.exe
+ndp48-devpack.exe

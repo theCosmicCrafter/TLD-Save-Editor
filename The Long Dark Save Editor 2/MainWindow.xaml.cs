@@ -314,7 +314,7 @@ namespace The_Long_Dark_Save_Editor_2
             }
         }
 
-        private void RefreshClicked(object sender, RoutedEventArgs e)
+        public void RefreshClicked(object sender, RoutedEventArgs e)
         {
             if (CurrentSave != null)
                 SetSave(CurrentSave.path);
@@ -383,6 +383,11 @@ namespace The_Long_Dark_Save_Editor_2
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         private void TheWindow_Activated(object sender, EventArgs e)
         {

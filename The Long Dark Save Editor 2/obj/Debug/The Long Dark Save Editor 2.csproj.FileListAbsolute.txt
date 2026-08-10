@@ -1,0 +1,83 @@
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.csproj.AssemblyReference.cache
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\ErrorDialog.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Views\BackupManagerView.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\MapTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\App.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\ErrorDialog.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Views\BackupManagerView.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Images\InjuriesBody.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\MainWindow.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\AboutTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\InjuriesTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\InventoryTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\MapTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\RawJsonTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\ProfileTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\SkillsTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\App.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2_MarkupCompile.cache
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2_MarkupCompile.lref
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\PlayerTab.g.cs
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Colors\HinterlandAccent.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Colors\HinterlandPrimary.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Images\InjuriesBody.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\MainWindow.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\AboutTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\InjuriesTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\InventoryTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\RawJsonTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\ProfileTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\SkillsTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.exe
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\The Long Dark Save Editor 2.exe.config
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\The Long Dark Save Editor 2.exe
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\The Long Dark Save Editor 2.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\de-DE\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\it-IT\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\pl-PL\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\zh-CN\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\ru-RU\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Dragablz.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\MaterialDesignColors.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Buffers.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Memory.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Dragablz.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Dragablz.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\MaterialDesignColors.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Buffers.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Memory.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\Tabs\PlayerTab.baml
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.g.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.de-DE.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.it-IT.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.pl-PL.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.zh-CN.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The_Long_Dark_Save_Editor_2.Properties.Resources.ru-RU.resources
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.csproj.GenerateResource.cache
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long Dark Save Editor 2.csproj.CoreCompileInputs.cache
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\de-DE\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\it-IT\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\pl-PL\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\zh-CN\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\ru-RU\The Long Dark Save Editor 2.resources.dll
+C:\Users\richk\OneDrive\Desktop\GAMING PLATFORMS\TLD-Save-Editor\The Long Dark Save Editor 2\obj\Debug\The Long.AE41A924.Up2Date

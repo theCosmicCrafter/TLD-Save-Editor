@@ -150,7 +150,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             {
                 if (entry.Value.category == category && !entry.Value.hide)
                 {
-                    var description = Resources.ResourceManager.GetString(entry.Key) ?? entry.Key;
+                    var description = Properties.Resources.ResourceManager.GetString(entry.Key) ?? entry.Key;
                     if (string.IsNullOrEmpty(filter) ||
                         description.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0 ||
                         entry.Key.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0)
@@ -170,7 +170,6 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             // TODO!!
         }
 
-<<<<<<< HEAD
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             var view = CollectionViewSource.GetDefaultView(ItemList.ItemsSource);
