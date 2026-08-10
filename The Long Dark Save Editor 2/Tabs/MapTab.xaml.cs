@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -153,7 +154,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             if (mapInfo == null) return;
 
             double zoom = e.Delta > 0 ? .3 * scaleMap.ScaleX : -.3 * scaleMap.ScaleX;
-            
+
             var x = e.GetPosition(mapLayer).X / mapLayer.ActualWidth;
             var y = e.GetPosition(mapLayer).Y / mapLayer.ActualHeight;
             x = Math.Max(Math.Min(x, 1), 0);
@@ -164,7 +165,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
             translateMap.X -= dX;
             translateMap.Y -= dY;
             mapLayer.RenderTransformOrigin = new Point(x, y);
-            
+
             scaleMap.ScaleX += zoom;
             scaleMap.ScaleY += zoom;
 
@@ -186,6 +187,48 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateMap();
+        }
+
+        private void ResetSceneClicked(object sender, RoutedEventArgs e)
+        {
+            var save = MainWindow.Instance?.CurrentSave;
+            if (save?.Global == null)
+                return;
+
+            var sceneName = save.Boot.m_SceneName.Value;
+            if (string.IsNullOrEmpty(sceneName))
+                return;
+
+            var result = MessageBox.Show(
+                "This will delete the scene save file for the current region (" + sceneName + ").\n" +
+                "All loot, containers, and objects in this region will reset to their original state.\n\n" +
+                "The game will regenerate the scene data on next load.\n\nContinue?",
+                "Reset Scene Data",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
+
+            if (result != MessageBoxResult.Yes)
+                return;
+
+            var saveDir = Path.GetDirectoryName(save.path);
+            var sceneFile = Path.Combine(saveDir, sceneName + ".scene");
+
+            try
+            {
+                if (File.Exists(sceneFile))
+                    File.Delete(sceneFile);
+
+                var st = save.Global.GameManagerData.SceneTransition;
+                st.m_ForceNextSceneLoadTriggerScene = null;
+                st.m_ForceSceneOnNextNavMapLoad = null;
+
+                MessageBox.Show("Scene data reset. Save the game in the editor, then load in-game to regenerate the scene.",
+                    "Scene Reset", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to reset scene data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
