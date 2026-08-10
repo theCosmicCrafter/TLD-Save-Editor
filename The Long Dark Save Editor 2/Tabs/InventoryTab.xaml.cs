@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -23,11 +24,49 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
     {
         private MainWindow mainWindow;
 
+        public static readonly DependencyProperty ItemCountProperty =
+            DependencyProperty.Register(nameof(ItemCount), typeof(int), typeof(InventoryTab), new PropertyMetadata(0));
+        public int ItemCount { get => (int)GetValue(ItemCountProperty); set => SetValue(ItemCountProperty, value); }
+
+        public static readonly DependencyProperty TotalWeightProperty =
+            DependencyProperty.Register(nameof(TotalWeight), typeof(double), typeof(InventoryTab), new PropertyMetadata(0.0));
+        public double TotalWeight { get => (double)GetValue(TotalWeightProperty); set => SetValue(TotalWeightProperty, value); }
+
         public InventoryTab()
         {
             InitializeComponent();
             mainWindow = MainWindow.Instance;
             UpdateAddItemList();
+            Loaded += InventoryTab_Loaded;
+        }
+
+        private void InventoryTab_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (mainWindow?.CurrentSave?.Global?.Inventory?.Items != null)
+            {
+                var items = mainWindow.CurrentSave.Global.Inventory.Items;
+                items.CollectionChanged -= Items_CollectionChanged;
+                items.CollectionChanged += Items_CollectionChanged;
+                UpdateSummary();
+            }
+        }
+
+        private void Items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            UpdateSummary();
+        }
+
+        private void UpdateSummary()
+        {
+            var items = mainWindow?.CurrentSave?.Global?.Inventory?.Items;
+            if (items == null)
+            {
+                ItemCount = 0;
+                TotalWeight = 0;
+                return;
+            }
+            ItemCount = items.Count;
+            TotalWeight = items.Sum(i => i.Gear?.m_WeightKG ?? 0);
         }
 
         private void AddItemClicked(object sender, RoutedEventArgs e)

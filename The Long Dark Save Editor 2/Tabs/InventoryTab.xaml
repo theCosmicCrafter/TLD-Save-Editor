@@ -127,6 +127,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
@@ -150,7 +151,22 @@
             </StackPanel>
             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Border Grid.Row="1" Background="{DynamicResource MaterialDesignToolBarBackground}" Padding="10 4">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PackageVariant" Width="20" Height="20" VerticalAlignment="Center" Margin="0 0 5 0"/>
+                <TextBlock VerticalAlignment="Center" Margin="0 0 20 0">
+                    <Run Text="Items: "/>
+                    <Run Text="{Binding ItemCount, Mode=OneWay, RelativeSource={RelativeSource AncestorType=UserControl}}" FontWeight="Bold"/>
+                </TextBlock>
+                <materialDesign:PackIcon Kind="Scale" Width="20" Height="20" VerticalAlignment="Center" Margin="0 0 5 0"/>
+                <TextBlock VerticalAlignment="Center">
+                    <Run Text="Total Weight: "/>
+                    <Run Text="{Binding TotalWeight, Mode=OneWay, StringFormat=N2, RelativeSource={RelativeSource AncestorType=UserControl}}" FontWeight="Bold"/>
+                    <Run Text=" kg"/>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MaxWidth="250"/>
                 <ColumnDefinition Width="1"/>
