@@ -136,7 +136,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
 
         private void UpdateAddItemList()
         {
-            if (cbItemCategory == null)
+            if (cbItemCategory == null || cbItem == null)
                 return;
 
             var category = cbItemCategory.SelectedValue as ItemCategory?;
@@ -269,6 +269,9 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
 
         private void cbSortBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (ItemList?.ItemsSource == null)
+                return;
+
             var view = CollectionViewSource.GetDefaultView(ItemList.ItemsSource);
             if (view == null || view.SortDescriptions == null)
                 return;

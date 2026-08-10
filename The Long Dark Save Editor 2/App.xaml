@@ -29,12 +29,19 @@
 
                     <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource Accent200}"/>
                     <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+
+                    <SolidColorBrush x:Key="SecondaryHueLightBrush" Color="{StaticResource Accent100}"/>
+                    <SolidColorBrush x:Key="SecondaryHueLightForegroundBrush" Color="{StaticResource Accent100Foreground}"/>
+                    <SolidColorBrush x:Key="SecondaryHueMidBrush" Color="{StaticResource Accent200}"/>
+                    <SolidColorBrush x:Key="SecondaryHueMidForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+                    <SolidColorBrush x:Key="SecondaryHueDarkBrush" Color="{StaticResource Accent400}"/>
+                    <SolidColorBrush x:Key="SecondaryHueDarkForegroundBrush" Color="{StaticResource Accent400Foreground}"/>
                 </ResourceDictionary>
 
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
-            
+
             <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
 
             <Style TargetType="FrameworkElement" x:Key="HideIfNotCustomDifficulty">
@@ -58,8 +65,8 @@
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
-                                <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                Background="{TemplateBinding Background}"                                          
+                                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}"
                                 Margin="0 0 0 0">
                                     <!--<dragablzThemes:Ripple HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">-->
                                     <Grid>
@@ -68,14 +75,14 @@
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
                                         <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
-                                                      x:Name="contentPresenter"                                                                                            
+                                                      x:Name="contentPresenter"
                                                       Margin="{TemplateBinding Control.Padding}"
                                                       Opacity=".87"/>
-                                        <Thumb Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                                        <Thumb Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
                                            x:Name="PART_Thumb"
                                            Style="{StaticResource MaterialDesignInvisibleThumbStyle}" />
                                         <Button Grid.Column="1"
-                                            Style="{StaticResource MaterialDesignCloseItemCommandButtonStyle}"                                            
+                                            Style="{StaticResource MaterialDesignCloseItemCommandButtonStyle}"
                                             Command="{x:Static dragablz:TabablzControl.CloseItemCommand}"
                                             CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}">
                                             <Button.Visibility>
@@ -140,15 +147,15 @@
 											<DropShadowEffect BlurRadius="5" ShadowDepth="3" Direction="270" Opacity="1" />
 										</Border.Effect>
 									</Border>-->
-                                    <ContentControl Grid.Column="0" x:Name="PrefixContentControl" 
+                                    <ContentControl Grid.Column="0" x:Name="PrefixContentControl"
                                             Content="{TemplateBinding HeaderPrefixContent}"
                                             ContentStringFormat="{TemplateBinding HeaderPrefixContentStringFormat}"
                                             ContentTemplate="{TemplateBinding HeaderPrefixContentStringFormat}"
                                             ContentTemplateSelector="{TemplateBinding HeaderPrefixContentTemplateSelector}"/>
-                                    <dragablz:DragablzItemsControl x:Name="PART_HeaderItemsControl"                                                         
+                                    <dragablz:DragablzItemsControl x:Name="PART_HeaderItemsControl"
                                                            Grid.Column="1"
                                                            FixedItemCount="{TemplateBinding FixedHeaderCount}"
-                                                           ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Items}"                                                                                                            
+                                                           ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Items}"
                                                            ItemContainerStyle="{TemplateBinding ItemContainerStyle}"
                                                            ItemsOrganiser="{TemplateBinding HeaderItemsOrganiser}"
                                                            KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"
@@ -173,7 +180,7 @@
                                     Command="{x:Static dragablz:TabablzControl.AddItemCommand}"
                                     Visibility="{TemplateBinding ShowDefaultAddButton, Converter={StaticResource BooleanToVisibilityConverter}}"
                                     />
-                                    <ContentControl Grid.Column="3" x:Name="SuffixContentControl" 
+                                    <ContentControl Grid.Column="3" x:Name="SuffixContentControl"
                                             Content="{TemplateBinding HeaderSuffixContent}"
                                             ContentStringFormat="{TemplateBinding HeaderSuffixContentStringFormat}"
                                             ContentTemplate="{TemplateBinding HeaderSuffixContentStringFormat}"
@@ -260,7 +267,7 @@
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
                                         ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                         Padding="{TemplateBinding Padding}"/>
                                 </Grid>
@@ -398,10 +405,10 @@
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Grid>
                                 <Border Background="{TemplateBinding Background}" x:Name="border" CornerRadius="0">
-                                    <wpf:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"    
-                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    <wpf:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"
+                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                        Padding="{TemplateBinding Padding}" 
+                                        Padding="{TemplateBinding Padding}"
                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                                 </Border>
                             </Grid>
