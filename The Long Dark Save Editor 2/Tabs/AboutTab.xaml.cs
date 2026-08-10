@@ -15,5 +15,10 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         {
             Process.Start("https://github.com/FINDarkside/TLD-Save-Editor");
         }
+
+        private void ViewForkClicked(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/theCosmicCrafter/TLD-Save-Editor");
+        }
     }
 }
