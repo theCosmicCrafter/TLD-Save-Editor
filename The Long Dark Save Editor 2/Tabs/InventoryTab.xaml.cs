@@ -1,12 +1,15 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
+using The_Long_Dark_Save_Editor_2.Properties;
 
 namespace The_Long_Dark_Save_Editor_2.Tabs
 {
@@ -21,7 +24,7 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         {
             InitializeComponent();
             mainWindow = MainWindow.Instance;
-
+            UpdateAddItemList();
         }
 
         private void AddItemClicked(object sender, RoutedEventArgs e)
@@ -77,6 +80,47 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         {
             if (cbItem.SelectedItem == null && cbItem.Items.Count > 0)
                 cbItem.SelectedIndex = 0;
+        }
+
+        private void cbItemCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateAddItemList();
+        }
+
+        private void txtAddItemSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAddItemList();
+        }
+
+        private void UpdateAddItemList()
+        {
+            if (cbItemCategory == null)
+                return;
+
+            var category = cbItemCategory.SelectedValue as ItemCategory?;
+            if (category == null)
+                return;
+
+            var filter = txtAddItemSearch?.Text?.Trim() ?? string.Empty;
+
+            var items = new List<EnumerationMember>();
+            foreach (var entry in ItemDictionary.itemInfo)
+            {
+                if (entry.Value.category == category && !entry.Value.hide)
+                {
+                    var description = Resources.ResourceManager.GetString(entry.Key) ?? entry.Key;
+                    if (string.IsNullOrEmpty(filter) ||
+                        description.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        entry.Key.IndexOf(filter, System.StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        items.Add(new EnumerationMember { Value = entry.Key, Description = description });
+                    }
+                }
+            }
+
+            items = items.OrderBy(item => item.Description).ToList();
+            cbItem.ItemsSource = items;
+            cbItem.SelectedIndex = items.Count > 0 ? 0 : -1;
         }
 
         private void PrintJsonClicked(object sender, RoutedEventArgs e)

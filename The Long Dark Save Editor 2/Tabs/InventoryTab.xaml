@@ -128,9 +128,10 @@
         <StackPanel Grid.Row="0">
             <StackPanel Orientation="Horizontal" Margin="5 0">
                 <ComboBox Name="cbItemCategory" ItemsSource="{Binding Source={helpers:EnumerationExtension {x:Type gameData:ItemCategory}}}"
-                                        DisplayMemberPath="Description" SelectedValuePath="Value" Width="120" SelectedIndex="0"/>
-                <ComboBox Name="cbItem" ItemsSource="{Binding ElementName=cbItemCategory, Path=SelectedValue, Converter={StaticResource CategoryToItemsConverter}}"
-                          Margin="10 0 5 0" DisplayMemberPath="Description" SelectedValuePath="Value" Width="160" SelectionChanged="cbItem_SelectionChanged" SelectedIndex="0" IsEditable="True"/>
+                                        DisplayMemberPath="Description" SelectedValuePath="Value" Width="120" SelectedIndex="0" SelectionChanged="cbItemCategory_SelectionChanged"/>
+                <TextBox Name="txtAddItemSearch" materialDesign:HintAssist.Hint="Filter items..." Margin="10 0 5 0" Width="120" TextChanged="txtAddItemSearch_TextChanged"/>
+                <ComboBox Name="cbItem"
+                          Margin="10 0 5 0" DisplayMemberPath="Description" SelectedValuePath="Value" Width="160" SelectionChanged="cbItem_SelectionChanged" SelectedIndex="0" IsEditable="True" TextSearch.TextPath="Description"/>
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="AddItemClicked" Content="{x:Static p:Resources.AddItem}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RepairAllClicked" Content="{x:Static p:Resources.RepairAll}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RemoveAllClicked" Content="{x:Static p:Resources.RemoveAll}" />
