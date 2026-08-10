@@ -191,6 +191,9 @@
     <Compile Include="Tabs\MapTab.xaml.cs">
       <DependentUpon>MapTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\RawJsonTab.xaml.cs">
+      <DependentUpon>RawJsonTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\PlayerTab.xaml.cs">
       <DependentUpon>PlayerTab.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\PlayerTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\RawJsonTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
