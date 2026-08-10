@@ -13,12 +13,12 @@
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="{x:Static p:Resources.Title}" Height="600" Width="900" 
+        Title="{x:Static p:Resources.Title}" Height="600" Width="900"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Loaded="Window_Loaded" Closing="Window_Closing" Activated="TheWindow_Activated">
@@ -32,7 +32,7 @@
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
         <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
         <converters:ObjectNotNullConverter x:Key="ObjectNotNullConverter" />
-        
+
         <System:Double x:Key="double100">100</System:Double>
     </Window.Resources>
     <materialDesign:DialogHost Name="dialogHost" >
@@ -44,7 +44,7 @@
                      Value="0" IsIndeterminate="True" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="30" Height="30" Margin="10"/>
                 </StackPanel>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModels:SaveFileUpdatedViewModel}">
                 <Grid Margin="10" MinWidth="300" MinHeight="150">
                     <Grid.RowDefinitions>
@@ -54,7 +54,7 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0">
                          <TextBlock Grid.Row="0" Margin="0 0 0 10" FontWeight="Bold">Currently open save has been modified</TextBlock>
-                        <TextBlock Grid.Row="0" Margin="0 0 0 10">If you don't refresh, you potentially lose any chnges made in-game</TextBlock>
+                        <TextBlock Grid.Row="0" Margin="0 0 0 10">If you don't refresh, you potentially lose any changes made in-game</TextBlock>
                          <TextBlock Grid.Row="0" Margin="0 0 0 10">If you refresh, you'll lose any changes made in the editor without saving</TextBlock>
                     </StackPanel>
                     <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal" Grid.Row="2">

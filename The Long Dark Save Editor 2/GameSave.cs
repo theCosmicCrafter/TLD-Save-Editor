@@ -71,6 +71,12 @@ namespace The_Long_Dark_Save_Editor_2
 
         private void Backup()
         {
+            if (!File.Exists(this.path))
+            {
+                throw new FileNotFoundException("The save file could not be found at: " + this.path +
+                    "\n\nIt may have been moved or deleted. The save cannot be backed up or saved.");
+            }
+
             var backupDirectory = Path.Combine(Path.GetDirectoryName(this.path), "backups");
             Directory.CreateDirectory(backupDirectory);
 
@@ -87,7 +93,15 @@ namespace The_Long_Dark_Save_Editor_2
             {
                 backupPath = Path.Combine(backupDirectory, timestamp + "-" + Path.GetFileName(this.path) + "(" + i++ + ")" + ".backup");
             }
-            File.Copy(this.path, backupPath);
+            try
+            {
+                File.Copy(this.path, backupPath);
+            }
+            catch (IOException ex)
+            {
+                System.Windows.MessageBox.Show("Failed to create backup: " + ex.Message, "Backup Warning",
+                    System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+            }
         }
     }
 }
