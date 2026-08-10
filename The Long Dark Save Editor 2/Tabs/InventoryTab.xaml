@@ -22,6 +22,7 @@
         <converters:CategoryToItemsConverter x:Key="CategoryToItemsConverter" />
         <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converters:ConditionToColorConverter x:Key="ConditionToColorConverter" />
 
         <CollectionViewSource Source="{Binding CurrentSave.Global.Inventory.Items , UpdateSourceTrigger=PropertyChanged}" x:Key="InventoryItems">
             <CollectionViewSource.SortDescriptions>
@@ -43,8 +44,11 @@
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                         <Label Width="130" Content="{x:Static p:Resources.Condition}" />
                         <Slider Name="healthSlider" TickFrequency="0.01" Orientation="Horizontal" Minimum="0" IsSnapToTickEnabled="True"
-                            Maximum="1" Width="200" Value="{Binding Gear.NormalizedCondition}" Margin="5 5">
+                            Maximum="1" Width="150" Value="{Binding Gear.NormalizedCondition}" Margin="5 5">
                         </Slider>
+                        <ProgressBar Width="40" Height="16" Minimum="0" Maximum="1"
+                                     Value="{Binding Gear.NormalizedCondition}"
+                                     Foreground="{Binding Gear.NormalizedCondition, Converter={StaticResource ConditionToColorConverter}}" />
                         <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter = {StaticResource DoubleToPercentageConverter}}"></Label>
                     </StackPanel>
                     <StackPanel Visibility="{Binding Gear.StackableItem, Converter={StaticResource ObjectToVisibilityConverter}}" Orientation="Horizontal" Margin="0 0 0 5">
@@ -137,6 +141,12 @@
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RemoveAllClicked" Content="{x:Static p:Resources.RemoveAll}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ExportLoadoutClicked" Content="Export" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ImportLoadoutClicked" Content="Import" />
+                <Label Content="Sort:" VerticalAlignment="Center" Margin="10 0 0 0"/>
+                <ComboBox Name="cbSortBy" Width="100" SelectedIndex="0" SelectionChanged="cbSortBy_SelectionChanged" Margin="5 0 0 0">
+                    <ComboBoxItem Content="Category" />
+                    <ComboBoxItem Content="Name" />
+                    <ComboBoxItem Content="Condition" />
+                </ComboBox>
             </StackPanel>
             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
         </StackPanel>
@@ -169,7 +179,11 @@
                 </ListBox.GroupStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock FontSize="12" Text="{Binding InGameName}" />
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="4" Height="16" Margin="0 0 5 0"
+                                       Fill="{Binding Gear.NormalizedCondition, Converter={StaticResource ConditionToColorConverter}}" />
+                            <TextBlock FontSize="12" Text="{Binding InGameName}" />
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

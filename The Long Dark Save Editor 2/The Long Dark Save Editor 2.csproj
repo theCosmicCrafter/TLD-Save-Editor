@@ -112,6 +112,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\ConditionToColorConverter.cs" />
     <Compile Include="Converters\EnumWrapperConverter.cs" />
     <Compile Include="Converters\FeatEnabledConverter.cs" />
     <Compile Include="Converters\FourDoNBadgeCompletedConverter.cs" />
