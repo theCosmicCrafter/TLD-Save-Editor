@@ -23,30 +23,35 @@
         <Image x:Key="AshCanyonRegion" Source="../Images/AshCanyonRegion.png"/>
 
     </UserControl.Resources>
-    <Canvas x:Name="canvas" Height="{Binding ActualHeight, ElementName=userControl, Mode=OneWay}" MouseLeftButtonDown="canvas_MouseLeftButtonDown" MouseWheel="canvas_MouseWheel" MouseMove="canvas_MouseMove"
+    <Grid>
+        <Canvas x:Name="canvas" Height="{Binding ActualHeight, ElementName=userControl, Mode=OneWay}" MouseLeftButtonDown="canvas_MouseLeftButtonDown" MouseWheel="canvas_MouseWheel" MouseMove="canvas_MouseMove"
         MouseLeftButtonUp="canvas_MouseLeftButtonUp" Width="{Binding ActualWidth, ElementName=userControl, Mode=OneWay}" ClipToBounds="True" Background="#00000000" VerticalAlignment="Bottom" >
-        <Viewbox x:Name="mapLayer" Height="{Binding ActualHeight, ElementName=mapImage, Mode=OneWay}" Width="{Binding ActualWidth, ElementName=mapImage, Mode=OneWay}" RenderTransformOrigin="0,0">
-            <Viewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform x:Name="scaleMap" ScaleX=".5" ScaleY=".5"/>
-                    <TranslateTransform x:Name="translateMap" X="0" Y="0"/>
-                </TransformGroup>
-            </Viewbox.RenderTransform>
-            <Canvas Width="{Binding ActualWidth, ElementName=mapImage, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=mapImage, Mode=OneWay}">
-                <Image x:Name="mapImage" Source="../Images/CoastalHighwaySF.png" Canvas.Top="0" Canvas.Left="0" Stretch="Fill"/>
-                <Image x:Name="player" Source="../Images/location-indicator.png" Canvas.Top="20" Canvas.Left="20"
-                    Height="32" Width="32" Stretch="Fill">
-                    <Image.RenderTransform >
-                        <TransformGroup>
-                            <TranslateTransform X="-16" Y="-32" />
-                            <ScaleTransform x:Name="scaleOfPlayerIcon" ScaleX="1" ScaleY="1"/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Canvas>
-        </Viewbox>
-        <Grid Width="{Binding ActualWidth, ElementName=canvas, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=canvas, Mode=OneWay}" d:IsHidden="True">
+            <Viewbox x:Name="mapLayer" Height="{Binding ActualHeight, ElementName=mapImage, Mode=OneWay}" Width="{Binding ActualWidth, ElementName=mapImage, Mode=OneWay}" RenderTransformOrigin="0,0">
+                <Viewbox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="scaleMap" ScaleX=".5" ScaleY=".5"/>
+                        <TranslateTransform x:Name="translateMap" X="0" Y="0"/>
+                    </TransformGroup>
+                </Viewbox.RenderTransform>
+                <Canvas Width="{Binding ActualWidth, ElementName=mapImage, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=mapImage, Mode=OneWay}">
+                    <Image x:Name="mapImage" Source="../Images/CoastalHighwaySF.png" Canvas.Top="0" Canvas.Left="0" Stretch="Fill"/>
+                    <Image x:Name="player" Source="../Images/location-indicator.png" Canvas.Top="20" Canvas.Left="20"
+                        Height="32" Width="32" Stretch="Fill">
+                        <Image.RenderTransform >
+                            <TransformGroup>
+                                <TranslateTransform X="-16" Y="-32" />
+                                <ScaleTransform x:Name="scaleOfPlayerIcon" ScaleX="1" ScaleY="1"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Canvas>
+            </Viewbox>
+            <Grid Width="{Binding ActualWidth, ElementName=canvas, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=canvas, Mode=OneWay}" d:IsHidden="True">
 			<TextBlock x:Name="canvasLabel" Style="{StaticResource MaterialDesignHeadline2TextBlock}" Foreground="{StaticResource MaterialDesignBody}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
         </Grid>
-    </Canvas>
+        </Canvas>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0" Padding="12 4"
+                Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ResetSceneClicked"
+                Content="Reset Scene Data" ToolTip="Delete the scene save file for the current region. This resets all loot, containers, and objects to their original state."/>
+    </Grid>
 </UserControl>
