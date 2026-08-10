@@ -1,9 +1,13 @@
 ﻿using Newtonsoft.Json;
-using System.Diagnostics;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using The_Long_Dark_Save_Editor_2.Game_data;
 using The_Long_Dark_Save_Editor_2.Helpers;
+using Microsoft.Win32;
 
 namespace The_Long_Dark_Save_Editor_2.Tabs
 {
@@ -79,6 +83,80 @@ namespace The_Long_Dark_Save_Editor_2.Tabs
         private void PrintJsonClicked(object sender, RoutedEventArgs e)
         {
             // TODO!!
+        }
+
+        private void ExportLoadoutClicked(object sender, RoutedEventArgs e)
+        {
+            if (mainWindow.CurrentSave == null)
+                return;
+
+            var dialog = new SaveFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                DefaultExt = "json",
+                FileName = "loadout.json"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    var json = JsonConvert.SerializeObject(mainWindow.CurrentSave.Global.Inventory.Items, Formatting.Indented);
+                    File.WriteAllText(dialog.FileName, json);
+                }
+                catch (Exception ex)
+                {
+                    ErrorDialog.Show("Failed to export loadout", ex.Message);
+                }
+            }
+        }
+
+        private void ImportLoadoutClicked(object sender, RoutedEventArgs e)
+        {
+            if (mainWindow.CurrentSave == null)
+                return;
+
+            var dialog = new OpenFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                DefaultExt = "json"
+            };
+
+            if (dialog.ShowDialog() != true)
+                return;
+
+            try
+            {
+                var json = File.ReadAllText(dialog.FileName);
+                var imported = JsonConvert.DeserializeObject<List<InventoryItemSaveData>>(json);
+                if (imported == null)
+                    return;
+
+                var currentItems = mainWindow.CurrentSave.Global.Inventory.Items;
+                var existingIds = new HashSet<int>(currentItems.Select(i => i.Gear?.m_InstanceIDProxy ?? 0));
+
+                foreach (var item in imported)
+                {
+                    if (item.Gear == null)
+                        continue;
+
+                    var r = new Random();
+                    var id = r.Next();
+                    while (existingIds.Contains(id))
+                        id = r.Next();
+
+                    existingIds.Add(id);
+                    item.Gear.m_InstanceIDProxy = id;
+                    item.Gear.m_HoursPlayed = mainWindow.CurrentSave.Global.TimeOfDay.m_HoursPlayedNotPausedProxy;
+                    item.Gear.m_BeenInPlayerInventoryProxy = true;
+                    item.Gear.m_NonInteractive = false;
+                    currentItems.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorDialog.Show("Failed to import loadout", ex.Message);
+            }
         }
     }
 }
