@@ -94,44 +94,42 @@
                             <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">View on GitHub</TextBlock>
                         </StackPanel>
                     </Button>
-                    <!--<Label Margin="10 0 0 0" VerticalAlignment="Center" Content="{x:Static p:Resources.TestBranch}"/>
-                    <ToggleButton Margin="5 0 0 0" IsChecked="{Binding TestBranch, Mode=TwoWay}" Style="{StaticResource MaterialDesignSwitchToggleButton}"/>-->
                 </StackPanel>
             </Grid>
             <Rectangle DockPanel.Dock="Top" Fill="#A6B8C3" Height="1" ></Rectangle>
                 <dragablz:TabablzControl Name="tabPanel"  DockPanel.Dock="Bottom" FixedHeaderCount="7">
-                    <TabItem Header="{x:Static p:Resources.Profile}">
-                        <StackPanel IsEnabled="{Binding CurrentProfile, Converter={StaticResource ObjectNotNullConverter}}" >
+                    <TabItem Header="{x:Static p:Resources.Profile}" IsEnabled="{Binding CurrentProfile, Converter={StaticResource ObjectNotNullConverter}}">
+                        <StackPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" />
                             <tabs:ProfileTab />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.Player}">
-                        <StackPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}" >
+                    <TabItem Header="{x:Static p:Resources.Player}" IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                        <StackPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
                             <tabs:PlayerTab />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.Map}">
-                        <DockPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                    <TabItem Header="{x:Static p:Resources.Map}" IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                        <DockPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" DockPanel.Dock="Top"></Rectangle>
                             <tabs:MapTab  DockPanel.Dock="Top"/>
                         </DockPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.Skills}">
-                        <StackPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                    <TabItem Header="{x:Static p:Resources.Skills}" IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                        <StackPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
                             <tabs:SkillsTab />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.Injuries}">
-                        <DockPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                    <TabItem Header="{x:Static p:Resources.Injuries}" IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                        <DockPanel>
                             <Rectangle Grid.Row="0" Fill="#A6B8C3" Height="1" DockPanel.Dock="Top"></Rectangle>
                             <tabs:InjuriesTab Grid.Row="1"/>
                         </DockPanel>
                     </TabItem>
-                    <TabItem Header="{x:Static p:Resources.Inventory}">
-                        <DockPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                    <TabItem Header="{x:Static p:Resources.Inventory}" IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                        <DockPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" DockPanel.Dock="Top"></Rectangle>
                             <tabs:InventoryTab />
                         </DockPanel>
