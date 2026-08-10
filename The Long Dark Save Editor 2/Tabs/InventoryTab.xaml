@@ -135,6 +135,8 @@
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="AddItemClicked" Content="{x:Static p:Resources.AddItem}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RepairAllClicked" Content="{x:Static p:Resources.RepairAll}" />
                 <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="RemoveAllClicked" Content="{x:Static p:Resources.RemoveAll}" />
+                <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ExportLoadoutClicked" Content="Export" />
+                <Button Margin="10 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ImportLoadoutClicked" Content="Import" />
             </StackPanel>
             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>
         </StackPanel>
