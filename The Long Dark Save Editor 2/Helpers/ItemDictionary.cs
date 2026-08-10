@@ -562,6 +562,23 @@ namespace The_Long_Dark_Save_Editor_2.Helpers
 			AddItemInfo("GEAR_RifleBullets", ItemCategory.Hidden, @"{}");
             AddItemInfo("GEAR_ScarfTorn", ItemCategory.Hidden, @"{}");
              */
+
+            // Missing items from TLD wiki
+            AddItemInfo("GEAR_CougarCarcass", ItemCategory.Food, @"{""BodyHarvest"": {m_MeatAvailableKG: 10, m_Condition: 100}}");
+            AddItemInfo("GEAR_CougarHide", ItemCategory.Materials, @"{""StackableItem"": {""m_UnitsProxy"": 1}, ""EvolveItem"": {}}");
+            AddItemInfo("GEAR_CougarHideDried", ItemCategory.Materials, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
+            AddItemInfo("GEAR_CougarQuarter", ItemCategory.Food, @"{""BodyHarvest"": {m_QuarterBagWasteMultiplier:2, m_MeatAvailableKG: 1, m_Condition: 100, m_DamageSide:{Value:""DamageSideRight""}}}");
+            AddItemInfo("GEAR_DeerHide", ItemCategory.Materials, @"{""StackableItem"": {""m_UnitsProxy"": 1}, ""EvolveItem"": {}}");
+            AddItemInfo("GEAR_DeerHideDried", ItemCategory.Materials, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
+            AddItemInfo("GEAR_DeerQuarter", ItemCategory.Food, @"{""BodyHarvest"": {m_QuarterBagWasteMultiplier:2, m_MeatAvailableKG: 1, m_Condition: 100, m_DamageSide:{Value:""DamageSideRight""}}}");
+            AddItemInfo("GEAR_Flashlight_AuroraField", ItemCategory.Tools, @"{""FlashlightItem"": {""m_CurrentBatteryCharge"": 100}}");
+            AddItemInfo("GEAR_HatGatorBalaclavaA", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_JeremiahsCoat", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_KeroseneLampBGlass", ItemCategory.Tools, @"{""StackableItem"": {""m_UnitsProxy"": 1}}");
+            AddItemInfo("GEAR_MinersPants", ItemCategory.Clothing, @"{""ClothingItem"": {}}");
+            AddItemInfo("GEAR_Water1000ml", ItemCategory.Food, @"{""LiquidItem"": {""m_VolumeProxy"": 1.0}}");
+            AddItemInfo("GEAR_Water500ml", ItemCategory.Food, @"{""LiquidItem"": {""m_VolumeProxy"": 0.5}}");
+            AddItemInfo("GEAR_WolfCarcass", ItemCategory.Food, @"{""BodyHarvest"": {m_MeatAvailableKG: 5, m_Condition: 100}}");
         }
 
     }
