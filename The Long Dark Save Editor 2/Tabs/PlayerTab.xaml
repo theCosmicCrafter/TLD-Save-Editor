@@ -21,7 +21,12 @@
         <System:Double x:Key="double100">100</System:Double>
     </UserControl.Resources>
 
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
     <StackPanel Margin="10 10">
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+            <Button Margin="0 0 10 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="GodModeClicked" Content="God Mode" ToolTip="Enable NeverDie + Invulnerable + full HP + full vitals"/>
+            <Button Margin="0 0 10 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="CopyPositionClicked" Content="Copy Position" ToolTip="Copy current X/Y/Z to clipboard"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
             <Label Width="130" Content="{x:Static p:Resources.ExperienceMode}"/>
             <ComboBox Margin="10 0 0 0" Width="160" SelectedIndex="0" SelectedValuePath="Value" DisplayMemberPath="Description"
@@ -53,50 +58,54 @@
                 <TextBox Width="250" Text="{Binding CurrentSave.Global.PlayerManager.m_SaveGamePosition[1]}"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-            <Label Width="130" Content="{x:Static p:Resources.Health}"/>
-            <Slider Name="healthSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
-                    Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Condition.m_CurrentHPProxy}" Margin="5 5">
-            </Slider>
-            <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter={StaticResource PercentageConverter},
-                   ConverterParameter={StaticResource double100}}">
-            </Label>
-        </StackPanel>
-        <CheckBox IsChecked="{Binding CurrentSave.Global.Condition.m_NeverDieProxy}" Margin="0 0 0 5" Content="{x:Static p:Resources.NeverDie}"/>
-        <CheckBox IsChecked="{Binding CurrentSave.Global.Condition.m_Invulnerable}" Margin="0 0 0 5" Content="{x:Static p:Resources.Invulnerable}"/>
-        <CheckBox IsChecked="{Binding CurrentSave.Global.Inventory.m_ForceOverrideWeight}" Margin="0 0 0 5" Content="{x:Static p:Resources.InfiniteCarry}"/>
+        <GroupBox Header="Vitals" Margin="0 0 0 10" Padding="8">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <Label Width="130" Content="{x:Static p:Resources.Health}"/>
+                    <Slider Name="healthSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
+                            Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Condition.m_CurrentHPProxy}" Margin="5 5">
+                    </Slider>
+                    <Label Content="{Binding ElementName=healthSlider, Path=Value, Converter={StaticResource PercentageConverter},
+                           ConverterParameter={StaticResource double100}}">
+                    </Label>
+                </StackPanel>
+                <CheckBox IsChecked="{Binding CurrentSave.Global.Condition.m_NeverDieProxy}" Margin="0 0 0 5" Content="{x:Static p:Resources.NeverDie}"/>
+                <CheckBox IsChecked="{Binding CurrentSave.Global.Condition.m_Invulnerable}" Margin="0 0 0 5" Content="{x:Static p:Resources.Invulnerable}"/>
+                <CheckBox IsChecked="{Binding CurrentSave.Global.Inventory.m_ForceOverrideWeight}" Margin="0 0 0 5" Content="{x:Static p:Resources.InfiniteCarry}"/>
 
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-            <Label VerticalAlignment="Center" Width="130" Content="{x:Static p:Resources.CurrentCalories}"/>
-            <TextBox Text="{Binding CurrentSave.Global.Hunger.m_CurrentReserveCaloriesProxy}"  Width="250"></TextBox>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-            <Label Width="130" Content="{x:Static p:Resources.Thirst}"/>
-            <Slider Name="thirstSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
-                                        Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Thirst.m_CurrentThirstProxy}" Margin="5 5">
-            </Slider>
-            <Label Content="{Binding ElementName=thirstSlider, Path=Value, Converter={StaticResource PercentageConverter},
-                   ConverterParameter={StaticResource double100}}">
-            </Label>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-            <Label Width="130" Content="{x:Static p:Resources.Fatigue}"/>
-            <Slider Name="fatigueSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
-                    Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Fatigue.m_CurrentFatigueProxy}" Margin="5 5">
-            </Slider>
-            <Label Content="{Binding ElementName=fatigueSlider, Path=Value, Converter={StaticResource PercentageConverter},
-                   ConverterParameter={StaticResource double100}}">
-            </Label>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-            <Label Width="130" Content="{x:Static p:Resources.Freezing}"/>
-            <Slider Name="freezingSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
-                    Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Freezing.m_CurrentFreezingProxy}" Margin="5 5">
-            </Slider>
-            <Label Content="{Binding ElementName=freezingSlider, Path=Value, Converter={StaticResource PercentageConverter},
-                   ConverterParameter={StaticResource double100}}">
-            </Label>
-        </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <Label VerticalAlignment="Center" Width="130" Content="{x:Static p:Resources.CurrentCalories}"/>
+                    <TextBox Text="{Binding CurrentSave.Global.Hunger.m_CurrentReserveCaloriesProxy}"  Width="250"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <Label Width="130" Content="{x:Static p:Resources.Thirst}"/>
+                    <Slider Name="thirstSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
+                                                Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Thirst.m_CurrentThirstProxy}" Margin="5 5">
+                    </Slider>
+                    <Label Content="{Binding ElementName=thirstSlider, Path=Value, Converter={StaticResource PercentageConverter},
+                           ConverterParameter={StaticResource double100}}">
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <Label Width="130" Content="{x:Static p:Resources.Fatigue}"/>
+                    <Slider Name="fatigueSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
+                            Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Fatigue.m_CurrentFatigueProxy}" Margin="5 5">
+                    </Slider>
+                    <Label Content="{Binding ElementName=fatigueSlider, Path=Value, Converter={StaticResource PercentageConverter},
+                           ConverterParameter={StaticResource double100}}">
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <Label Width="130" Content="{x:Static p:Resources.Freezing}"/>
+                    <Slider Name="freezingSlider" Orientation="Horizontal" Minimum="0" TickFrequency="1"
+                            Maximum="100" Width="200" Value="{Binding CurrentSave.Global.Freezing.m_CurrentFreezingProxy}" Margin="5 5">
+                    </Slider>
+                    <Label Content="{Binding ElementName=freezingSlider, Path=Value, Converter={StaticResource PercentageConverter},
+                           ConverterParameter={StaticResource double100}}">
+                    </Label>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
 
         <GroupBox Header="Feats" Margin="0 10 0 0">
             <WrapPanel>
@@ -113,4 +122,5 @@
             </WrapPanel>
         </GroupBox>
     </StackPanel>
+    </ScrollViewer>
 </UserControl>
