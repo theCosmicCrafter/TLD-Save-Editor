@@ -88,6 +88,22 @@ namespace The_Long_Dark_Save_Editor_2
             TestBranch = Properties.Settings.Default.TestBranch;
             Title += " " + Version.ToString();
 
+            RestoreWindowState();
+        }
+
+        private void RestoreWindowState()
+        {
+            var s = Properties.Settings.Default;
+            if (s.WindowWidth > 0)
+                Width = s.WindowWidth;
+            if (s.WindowHeight > 0)
+                Height = s.WindowHeight;
+            if (s.WindowLeft >= 0)
+                Left = s.WindowLeft;
+            if (s.WindowTop >= 0)
+                Top = s.WindowTop;
+            if (s.WindowMaximized)
+                WindowState = WindowState.Maximized;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -304,6 +320,23 @@ namespace The_Long_Dark_Save_Editor_2
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
+            var s = Properties.Settings.Default;
+            if (WindowState == WindowState.Maximized)
+            {
+                s.WindowMaximized = true;
+                s.WindowWidth = RestoreBounds.Width;
+                s.WindowHeight = RestoreBounds.Height;
+                s.WindowLeft = RestoreBounds.Left;
+                s.WindowTop = RestoreBounds.Top;
+            }
+            else
+            {
+                s.WindowMaximized = false;
+                s.WindowWidth = Width;
+                s.WindowHeight = Height;
+                s.WindowLeft = Left;
+                s.WindowTop = Top;
+            }
             Properties.Settings.Default.Save();
         }
 
