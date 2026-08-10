@@ -63,6 +63,7 @@
                 <TextBox Width="250" Text="{Binding CurrentSave.Global.PlayerManager.m_SaveGamePosition[1]}"/>
             </StackPanel>
         </StackPanel>
+<<<<<<< HEAD
         <GroupBox Header="Vitals" Margin="0 0 0 10" Padding="8">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
@@ -126,6 +127,30 @@
                 <CheckBox Content="Night Walker" Tag="NightWalker" IsChecked="{Binding CurrentSave.Global.FeatsEnabled.m_FeatsEnabledThisSandbox, Converter={StaticResource FeatEnabledConverter}, ConverterParameter=NightWalker, Mode=OneWay}" Click="FeatCheckBox_Click" Margin="5"/>
             </WrapPanel>
         </GroupBox>
+
+        <Separator Margin="0 10"/>
+        <Label Content="Cheats &amp; Stats" FontWeight="Bold" Margin="0 5"/>
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Label Width="130" Content="Cheats Used"/>
+            <CheckBox IsChecked="{Binding CurrentSave.Global.PlayerManager.m_CheatsUsed}" VerticalAlignment="Center"/>
+            <Button Margin="20 0 0 0" Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Click="ClearCheatsFlagClicked" Content="Clear Cheats Flag"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Label Width="130" Content="Calories Harvested Today"/>
+            <TextBox Width="100" Text="{Binding CurrentSave.Global.PlayerManager.m_CaloriesHarvestedToday}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Label Width="130" Content="Condition Bonus %"/>
+            <TextBox Width="100" Text="{Binding CurrentSave.Global.PlayerManager.m_ConditonPercentBonus}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Label Width="130" Content="Fatigue Rate Scale"/>
+            <TextBox Width="100" Text="{Binding CurrentSave.Global.PlayerManager.m_FatigueRateScale}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Label Width="130" Content="Freezing Rate Scale"/>
+            <TextBox Width="100" Text="{Binding CurrentSave.Global.PlayerManager.m_FreezingRateScale}"/>
+        </StackPanel>
     </StackPanel>
     </ScrollViewer>
 </UserControl>
